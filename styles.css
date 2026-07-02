@@ -1,0 +1,211 @@
+/* La Grilla — identidad basada en la paleta "talavera" del juego (src/theme.ts) */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F2E9D2;
+  --card: #FBF6E8;
+  --ink: #26221A;
+  --muted: #A08F6A;
+  --muted-dark: #7A6A48; /* variante de muted con contraste AA sobre --bg */
+  --line: #D8C7A0;
+  --accent: #1E5FA8;      /* cobalto talavera */
+  --accent-soft: rgba(30, 95, 168, .12);
+  --accent2: #C0531F;     /* barro */
+  --accent2-dark: #8C3A12;
+  --gold: #C99A2E;
+  --jade: #2C7A57;
+  --radius: 16px;
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  font-family: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-underline-offset: 3px; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 72px 20px 56px;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, var(--accent-soft), transparent),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent2-dark);
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 99px;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.hero h1 .grilla { color: var(--accent2); }
+.hero .tagline {
+  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 12px;
+}
+.hero .sub {
+  max-width: 480px;
+  margin: 16px auto 0;
+  color: var(--muted-dark);
+  font-size: .98rem;
+}
+.hero-cta { margin-top: 32px; display: flex; justify-content: center; }
+.cta-placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: var(--ink);
+  color: var(--card);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: default;
+}
+.cta-placeholder small { display: block; font-weight: 400; font-size: .7rem; opacity: .7; text-align: left; }
+
+/* ---------- Secciones ---------- */
+section { padding: 64px 0; }
+.section-title {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+.section-sub { color: var(--muted-dark); margin-bottom: 36px; max-width: 560px; }
+
+/* ---------- Cómo se juega ---------- */
+.rules { display: grid; gap: 16px; grid-template-columns: 1fr; }
+.rule {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.rule-num {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  font-size: .95rem;
+}
+.rule p { font-size: .95rem; }
+.rule strong { color: var(--accent2-dark); }
+
+/* ---------- Galería de piezas ---------- */
+.chain { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pieces { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
+.piece {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 18px;
+  text-align: center;
+}
+.piece img { width: 88px; height: 88px; object-fit: contain; margin: 0 auto 14px; image-rendering: -webkit-optimize-contrast; }
+.piece h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+.piece blockquote { font-size: .88rem; color: var(--muted-dark); font-style: italic; }
+.piece--final { border-color: var(--gold); background: linear-gradient(180deg, rgba(201,154,46,.10), var(--bg)); }
+.piece--final h3 { color: var(--accent2-dark); }
+
+/* ---------- Lado económico ---------- */
+.econ .pieces { grid-template-columns: repeat(1, 1fr); }
+.econ .piece { display: flex; align-items: center; gap: 18px; text-align: left; padding: 18px 20px; }
+.econ .piece img { width: 64px; height: 64px; margin: 0; flex-shrink: 0; }
+
+/* ---------- Cartas que complican ---------- */
+.wildcards { background: var(--ink); color: var(--card); }
+.wildcards .section-title { color: var(--card); }
+.wildcards .section-sub { color: #B5A981; }
+.wildcards .pieces { grid-template-columns: 1fr; }
+.wildcards .piece {
+  background: rgba(251, 246, 232, .06);
+  border-color: rgba(216, 199, 160, .25);
+  text-align: left;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 22px;
+}
+.wildcards .piece img { width: 72px; height: 72px; margin: 0; flex-shrink: 0; }
+.wildcards .piece h3 { color: var(--gold); }
+.wildcards .piece p { font-size: .92rem; color: #D9CDAF; }
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  font-size: .85rem;
+  color: var(--muted-dark);
+}
+footer nav { margin-bottom: 12px; }
+footer a { color: var(--accent); }
+
+/* ---------- Página legal (/privacidad) ---------- */
+.legal-page { max-width: 700px; margin: 0 auto; padding: 48px 20px 80px; }
+.legal-page .brand { font-weight: 800; letter-spacing: -.02em; text-decoration: none; color: var(--ink); font-size: 1.1rem; }
+.legal-page .brand span { color: var(--accent2); }
+.legal-page h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); font-weight: 800; letter-spacing: -.02em; margin: 40px 0 6px; }
+.legal-page .updated { color: var(--muted-dark); font-size: .85rem; margin-bottom: 36px; }
+.legal-page h2 { font-size: 1.1rem; font-weight: 700; margin: 32px 0 8px; }
+.legal-page p, .legal-page li { color: #4A4232; font-size: .95rem; margin-bottom: 10px; }
+.legal-page ul { padding-left: 20px; }
+.legal-page .highlight {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 28px 0;
+  font-weight: 500;
+}
+.legal-page .back { display: inline-block; margin-top: 48px; font-size: .9rem; }
+
+/* ---------- Desktop ---------- */
+@media (min-width: 700px) {
+  .rules { grid-template-columns: repeat(2, 1fr); }
+  .pieces { grid-template-columns: repeat(3, 1fr); }
+  .econ .pieces { grid-template-columns: repeat(3, 1fr); }
+  .econ .piece { flex-direction: column; text-align: center; }
+  .econ .piece img { margin: 0 auto 12px; }
+  .wildcards .pieces { grid-template-columns: repeat(2, 1fr); }
+}

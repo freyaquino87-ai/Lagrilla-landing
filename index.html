@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Grilla — Fusiónate hasta la Silla</title>
+  <meta name="description" content="La Grilla: el juego de merge-puzzle de sátira política mexicana. Fusiona piezas, esquiva chapulines y llega hasta la Silla Presidencial. Gratis para iOS.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <!-- TODO: hero art del juego irá aquí (arriba del h1) cuando esté listo.
+         Sugerencia: sprite compuesto o key art sobre el fondo del Zócalo. -->
+    <p class="hero-eyebrow">Merge-puzzle · Sátira política mexicana</p>
+    <h1>La <span class="grilla">Grilla</span></h1>
+    <p class="tagline">Fusiónate hasta la Silla</p>
+    <p class="sub">Un juego de merge-puzzle donde escalas la política mexicana pieza por pieza. Gratis, sin anuncios de campaña.</p>
+    <div class="hero-cta">
+      <!-- CTA App Store: descomentar y poner el link real cuando la app esté publicada.
+      <a class="cta-placeholder" href="https://apps.apple.com/app/idXXXXXXXXX" style="cursor:pointer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08ZM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
+        <span>Descárgalo en el <strong>App Store</strong></span>
+      </a>
+      -->
+      <span class="cta-placeholder" aria-label="Próximamente en el App Store">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08ZM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
+        <span>Próximamente en el App Store<small>Gratis para iPhone</small></span>
+      </span>
+    </div>
+  </header>
+
+  <!-- ============ CÓMO SE JUEGA ============ -->
+  <section id="como-se-juega">
+    <div class="container">
+      <h2 class="section-title">Cómo se juega</h2>
+      <p class="section-sub">Reglas simples. Consecuencias cuestionables.</p>
+      <!-- TODO: screenshots del gameplay irán aquí, junto a las reglas, cuando pase el ASO. -->
+      <div class="rules">
+        <div class="rule"><span class="rule-num" aria-hidden="true">1</span><p>Fusiona piezas iguales para subirlas de nivel en la <strong>cadena política</strong>.</p></div>
+        <div class="rule"><span class="rule-num" aria-hidden="true">2</span><p>Cuidado con los obstáculos: el <strong>Plantón</strong> se teletransporta y el <strong>Chapulín</strong> se mueve solo.</p></div>
+        <div class="rule"><span class="rule-num" aria-hidden="true">3</span><p>Usa la <strong>Mordida</strong> para comprar la pieza que necesitas.</p></div>
+        <div class="rule"><span class="rule-num" aria-hidden="true">4</span><p>Llega hasta la <strong>Silla Presidencial</strong> y gana.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LA CADENA POLÍTICA ============ -->
+  <section class="chain" id="cadena">
+    <div class="container">
+      <h2 class="section-title">La cadena política</h2>
+      <p class="section-sub">Del volante en el metro a la Silla. Nadie se salta pasos… bueno, casi nadie.</p>
+      <div class="pieces">
+        <div class="piece">
+          <img src="/assets/sprites/panfleto.png" alt="Sprite del Panfleto" width="88" height="88" loading="lazy">
+          <h3>Panfleto</h3>
+          <blockquote>"Todo político empezó repartiendo volantes en el metro."</blockquote>
+        </div>
+        <div class="piece">
+          <img src="/assets/sprites/militante.png" alt="Sprite del Militante" width="88" height="88" loading="lazy">
+          <h3>Militante</h3>
+          <blockquote>"Ya se aprendió el discurso. Todavía cree en algo."</blockquote>
+        </div>
+        <div class="piece">
+          <img src="/assets/sprites/operador.png" alt="Sprite del Operador" width="88" height="88" loading="lazy">
+          <h3>Operador</h3>
+          <blockquote>"El que resuelve. El que sabe a quién llamar."</blockquote>
+        </div>
+        <div class="piece">
+          <img src="/assets/sprites/gobernador.png" alt="Sprite del Gobernador" width="88" height="88" loading="lazy">
+          <h3>Gobernador</h3>
+          <blockquote>"Ya tiene camioneta con vidrios polarizados."</blockquote>
+        </div>
+        <div class="piece">
+          <img src="/assets/sprites/alianza-politica.png" alt="Sprite de la Alianza" width="88" height="88" loading="lazy">
+          <h3>Alianza</h3>
+          <blockquote>"Se juntó con quien sea. Ya no importa el partido."</blockquote>
+        </div>
+        <div class="piece piece--final">
+          <img src="/assets/sprites/la-silla.png" alt="Sprite de la Silla Presidencial" width="88" height="88" loading="lazy">
+          <h3>Silla Presidencial</h3>
+          <blockquote>"Llegaste. Ahora a repartir cargos."</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EL LADO ECONÓMICO ============ -->
+  <section class="econ" id="economia">
+    <div class="container">
+      <h2 class="section-title">El lado económico</h2>
+      <p class="section-sub">Porque la grilla no se paga sola.</p>
+      <div class="pieces">
+        <div class="piece">
+          <img src="/assets/sprites/maletin.png" alt="Sprite del Maletín" width="64" height="64" loading="lazy">
+          <div>
+            <h3>Maletín</h3>
+            <blockquote>"El primer moche siempre es incómodo. Los demás no."</blockquote>
+          </div>
+        </div>
+        <div class="piece">
+          <img src="/assets/sprites/magnate.png" alt="Sprite del Magnate" width="64" height="64" loading="lazy">
+          <div>
+            <h3>Magnate</h3>
+            <blockquote>"Empresario que 'coincide' en todos los eventos oficiales."</blockquote>
+          </div>
+        </div>
+        <div class="piece">
+          <img src="/assets/sprites/yate.png" alt="Sprite del Yate" width="64" height="64" loading="lazy">
+          <div>
+            <h3>Yate</h3>
+            <blockquote>"Declaró que lo pagó con ahorros."</blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARTAS QUE COMPLICAN TODO ============ -->
+  <section class="wildcards" id="cartas">
+    <div class="container">
+      <h2 class="section-title">Cartas que complican todo</h2>
+      <p class="section-sub">No todo en el tablero quiere que llegues.</p>
+      <div class="pieces">
+        <div class="piece">
+          <img src="/assets/sprites/chapulin.png" alt="Sprite del Chapulín" width="72" height="72" loading="lazy">
+          <div>
+            <h3>Chapulín</h3>
+            <p>Se brinca de partido en partido según convenga. No se fusiona como los demás, se mueve solo. Junta tres y algo peor aparece.</p>
+          </div>
+        </div>
+        <div class="piece">
+          <img src="/assets/sprites/embajada.png" alt="Sprite de la Embajada" width="72" height="72" loading="lazy">
+          <div>
+            <h3>Embajada</h3>
+            <p>Lo que resulta cuando tres chapulines encuentran casa. Puesto cómodo, lejos del país, con vista al mar. Nadie pregunta por qué.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <nav><a href="/privacidad">Política de Privacidad</a></nav>
+    <p>© 2026 La Grilla. Cualquier parecido con la realidad es pura coincidencia electoral.</p>
+  </footer>
+
+</body>
+</html>
