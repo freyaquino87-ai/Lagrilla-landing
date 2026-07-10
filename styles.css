@@ -6,7 +6,7 @@
   --card: #FBF6E8;
   --ink: #26221A;
   --muted: #A08F6A;
-  --muted-dark: #7A6A48; /* variante de muted con contraste AA sobre --bg */
+  --muted-dark: #6F5F3E; /* variante de muted con contraste AA (5.1:1) sobre --bg */
   --line: #D8C7A0;
   --accent: #1E5FA8;      /* cobalto talavera */
   --accent-soft: rgba(30, 95, 168, .12);
@@ -145,7 +145,7 @@ section { padding: 64px 0; }
   padding: 24px 18px;
   text-align: center;
 }
-.piece img { width: 88px; height: 88px; object-fit: contain; margin: 0 auto 14px; image-rendering: -webkit-optimize-contrast; }
+.piece img { width: 88px; height: 88px; object-fit: contain; margin: 0 auto 14px; }
 .piece h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
 .piece blockquote { font-size: .88rem; color: var(--muted-dark); font-style: italic; }
 .piece--final { border-color: var(--gold); background: linear-gradient(180deg, rgba(201,154,46,.10), var(--bg)); }
