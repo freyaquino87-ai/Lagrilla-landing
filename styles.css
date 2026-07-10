@@ -61,6 +61,12 @@ h1, h2, h3 { text-wrap: balance; }
   padding: 6px 16px;
   margin-bottom: 24px;
 }
+.hero-shot { display: block; margin: 28px auto 8px; max-width: 220px; }
+.hero-shot img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 34px rgba(38, 34, 26, .22));
+}
 .hero h1 {
   font-size: clamp(3rem, 10vw, 5.5rem);
   font-weight: 800;
@@ -207,6 +213,7 @@ footer a { color: var(--accent); }
 
 /* ---------- Desktop ---------- */
 @media (min-width: 700px) {
+  .hero-shot { max-width: 260px; }
   .rules { grid-template-columns: repeat(2, 1fr); }
   .pieces { grid-template-columns: repeat(3, 1fr); }
   .econ .pieces { grid-template-columns: repeat(3, 1fr); }
