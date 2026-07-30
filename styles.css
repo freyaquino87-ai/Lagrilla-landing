@@ -205,12 +205,22 @@ h1, h2, h3 { text-wrap: balance; }
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 22px 26px;
+  padding: 18px 24px;
   opacity: 0;
   z-index: 2;
   box-shadow: 0 18px 32px rgba(38, 34, 26, .16);
 }
-.fusion-caption .hero-eyebrow { margin-bottom: 12px; margin-left: 0; }
+/* Sin pill: texto plano con sombra, igual que el eyebrow del Hero. */
+.fusion-caption .hero-eyebrow {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin-left: 0;
+  margin-bottom: 8px;
+  font-size: .82rem;
+  text-shadow: 0 1px 3px rgba(38, 34, 26, .18);
+}
 .fusion-caption h2 {
   font-size: clamp(1.25rem, 4vw, 1.7rem);
   font-weight: 800;
@@ -225,7 +235,7 @@ h1, h2, h3 { text-wrap: balance; }
 @media (max-width: 1024px) { .fusion-video { height: 190vh; } }
 @media (max-width: 768px)  {
   .fusion-video { height: 160vh; }
-  .fusion-caption { bottom: 4vh; padding: 18px 20px; }
+  .fusion-caption { bottom: 4vh; padding: 14px 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .fusion-caption { opacity: 1 !important; transform: translate(-50%, 0) !important; }
@@ -503,8 +513,24 @@ footer a { color: var(--accent); }
     margin: 0 auto;
   }
   .hero-text { text-align: left; margin: 0; max-width: none; }
-  .hero-eyebrow { margin-left: 0; }
-  .hero-stamp { margin-left: 0; }
+  /* Sin pill: texto plano con sombra, se lee igual sin la caja. */
+  .hero .hero-eyebrow {
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    margin-left: 0;
+    margin-bottom: 14px;
+    text-shadow: 0 1px 3px rgba(38, 34, 26, .2);
+  }
+  /* El sello pasa a la derecha del logo, en línea, en vez de debajo. */
+  .hero-stamp {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 20px;
+  }
+  .hero .tagline { margin-top: 10px; }
+  .hero .sub { margin: 16px 0 0; }
   .hero-cta { justify-content: flex-start; }
   .hero-shot { max-width: 225px; margin: 0; justify-self: end; transform: rotate(-6deg) translateY(-12px); }
 }
