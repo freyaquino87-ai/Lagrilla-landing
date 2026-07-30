@@ -135,7 +135,7 @@ h1, h2, h3 { text-wrap: balance; }
 /* ---------- Fusión en vivo (scroll video) ---------- */
 .fusion-video {
   position: relative;
-  height: 300vh;
+  height: 220vh;
   padding: 0;
 }
 .fusion-sticky {
@@ -222,9 +222,9 @@ h1, h2, h3 { text-wrap: balance; }
   color: var(--muted-dark);
 }
 
-@media (max-width: 1024px) { .fusion-video { height: 260vh; } }
+@media (max-width: 1024px) { .fusion-video { height: 190vh; } }
 @media (max-width: 768px)  {
-  .fusion-video { height: 220vh; }
+  .fusion-video { height: 160vh; }
   .fusion-caption { bottom: 4vh; padding: 18px 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -232,7 +232,7 @@ h1, h2, h3 { text-wrap: balance; }
 }
 
 /* ---------- Chapulín en vivo (scroll video, costado izquierdo) ---------- */
-.chapulin-video { position: relative; height: 220vh; padding: 0; }
+.chapulin-video { position: relative; height: 160vh; padding: 0; }
 .chapulin-sticky {
   position: sticky;
   top: 0;
@@ -292,17 +292,23 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: clamp(1.4rem, 4vw, 2rem);
   font-weight: 800;
   letter-spacing: -.02em;
-  margin: 12px 0 10px;
+  margin: 0;
 }
-.chapulin-text p { color: var(--muted-dark); font-size: 1rem; max-width: 480px; }
+.chapulin-punchline {
+  color: var(--accent2);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapulin-punchline { opacity: 1; }
+}
 
-@media (max-width: 1024px) { .chapulin-video { height: 200vh; } }
+@media (max-width: 1024px) { .chapulin-video { height: 145vh; } }
 @media (max-width: 768px) {
-  .chapulin-video { height: 190vh; }
+  .chapulin-video { height: 135vh; }
   .chapulin-sticky { flex-direction: column; justify-content: center; }
   .chapulin-media { width: 100%; height: 52%; }
   .chapulin-text { padding: 16px 24px 0; text-align: center; }
-  .chapulin-text p { margin: 0 auto; }
 }
 
 /* ---------- Secciones ---------- */
@@ -315,40 +321,6 @@ section { padding: 64px 0; }
 }
 .section-sub { color: var(--muted-dark); margin-bottom: 36px; max-width: 560px; }
 
-/* ---------- Cómo se juega ---------- */
-.rules { display: grid; gap: 16px; grid-template-columns: 1fr; }
-.rule {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-.rule-num {
-  flex-shrink: 0;
-  width: 34px; height: 34px;
-  border-radius: 10px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 800;
-  display: grid;
-  place-items: center;
-  font-size: .95rem;
-}
-.rule p { font-size: .95rem; }
-.rule strong { color: var(--accent2-dark); }
-
-/* ---------- Galería de piezas ---------- */
-.chain {
-  background: var(--card);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  clip-path: polygon(0 24px, 100% 0, 100% 100%, 0 100%);
-  padding-top: 24px;
-  margin-top: -24px;
-}
 .pieces { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
 .piece {
   background: var(--bg);
@@ -360,52 +332,6 @@ section { padding: 64px 0; }
 .piece img { width: 88px; height: 88px; object-fit: contain; margin: 0 auto 14px; }
 .piece h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
 .piece blockquote { font-size: .88rem; color: var(--muted-dark); font-style: italic; }
-.piece--final { border-color: var(--gold); background: linear-gradient(180deg, rgba(201,154,46,.10), var(--bg)); }
-.piece--final h3 { color: var(--accent2-dark); }
-
-/* Escalinata ascendente: cada peldaño se desplaza a la derecha y crece,
-   para que la jerarquía política se sienta como algo que se sube, no una grid plana. */
-.staircase { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.step {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin-left: calc(var(--i, 0) * 4%);
-}
-.step:nth-child(1) { --i: 0; }
-.step:nth-child(2) { --i: 1; }
-.step:nth-child(3) { --i: 2; }
-.step:nth-child(4) { --i: 3; }
-.step:nth-child(5) { --i: 4; }
-.step:nth-child(6) { --i: 5; }
-.step img { flex-shrink: 0; object-fit: contain; }
-.step-num {
-  display: inline-block;
-  font-size: .68rem;
-  font-weight: 800;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border-radius: 6px;
-  padding: 1px 7px;
-  margin-bottom: 4px;
-}
-.step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-.step blockquote { font-size: .85rem; color: var(--muted-dark); font-style: italic; }
-.step--final {
-  border-color: var(--gold);
-  background: linear-gradient(90deg, rgba(201,154,46,.14), var(--bg));
-}
-.step--final h3 { color: var(--accent2-dark); }
-.step--final .step-num { color: var(--gold); background: rgba(201,154,46,.16); }
-
-/* ---------- Lado económico ---------- */
-.econ .pieces { grid-template-columns: repeat(1, 1fr); }
-.econ .piece { display: flex; align-items: center; gap: 18px; text-align: left; padding: 18px 20px; }
-.econ .piece img { width: 64px; height: 64px; margin: 0; flex-shrink: 0; }
 
 /* ---------- Cartas que complican ---------- */
 .wildcards { background: var(--ink); color: var(--card); }
@@ -421,10 +347,41 @@ section { padding: 64px 0; }
   align-items: flex-start;
   padding: 22px;
 }
-.wildcards .piece img { width: 72px; height: 72px; margin: 0; flex-shrink: 0; }
+/* El hijo flex es <picture>, no <img>: sin esto el sprite se comprime. */
+.wildcards .piece picture { flex-shrink: 0; }
+.wildcards .piece img { width: 72px; height: 72px; margin: 0; }
 .wildcards .piece h3 { color: var(--gold); }
 .wildcards .piece p { font-size: .92rem; color: #D9CDAF; }
 .wildcards .piece:nth-child(even) { margin-left: 6%; }
+
+/* La Mordida: no es una pieza del tablero, así que se separa de la grid. */
+.store {
+  margin-top: 28px;
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(201, 154, 46, .45);
+  background: linear-gradient(180deg, rgba(201, 154, 46, .12), rgba(251, 246, 232, .04));
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  text-align: left;
+}
+.store picture { flex-shrink: 0; }
+.store img { width: 88px; height: 88px; object-fit: contain; }
+.store h3 { color: var(--gold); font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+.store p { font-size: .92rem; color: #D9CDAF; }
+
+@media (max-width: 699px) {
+  .store { flex-direction: column; text-align: center; gap: 14px; }
+  .store img { width: 72px; height: 72px; }
+}
+
+/* ---------- CTA final ---------- */
+.final-cta { text-align: center; }
+.final-cta-silla { width: 72px; height: 72px; object-fit: contain; margin: 0 auto 12px; }
+.final-cta .hero-eyebrow { margin-left: 0; }
+.final-cta .section-title { max-width: 560px; margin-left: auto; margin-right: auto; }
+.final-cta .hero-cta { justify-content: center !important; padding-bottom: 0; }
 
 /* ---------- Footer ---------- */
 footer {
@@ -459,13 +416,8 @@ footer a { color: var(--accent); }
 
 /* ---------- Desktop ---------- */
 @media (min-width: 700px) {
-  .rules { grid-template-columns: repeat(2, 1fr); }
-  .econ .pieces { grid-template-columns: repeat(3, 1fr); }
-  .econ .piece { flex-direction: column; text-align: center; }
-  .econ .piece img { margin: 0 auto 12px; }
   .wildcards .pieces { grid-template-columns: repeat(2, 1fr); }
   .wildcards .piece:nth-child(even) { margin-left: 10%; }
-  .step { margin-left: calc(var(--i, 0) * 6%); }
 }
 
 @media (min-width: 900px) {

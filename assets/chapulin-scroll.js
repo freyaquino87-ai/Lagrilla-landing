@@ -10,6 +10,7 @@
   var loader = document.getElementById('chapulinLoader');
   var loaderFill = document.getElementById('chapulinLoaderFill');
   var staticFallback = document.getElementById('chapulinStaticFallback');
+  var punchline = document.getElementById('chapulinPunchline');
 
   var isMobile = window.innerWidth <= 768;
   var FRAME_COUNT = isMobile ? 40 : 60;
@@ -25,6 +26,7 @@
     canvas.style.display = 'none';
     loader.style.display = 'none';
     if (staticFallback) staticFallback.style.display = 'block';
+    if (punchline) punchline.style.opacity = '1';
     return;
   }
 
@@ -100,6 +102,11 @@
     ctx.drawImage(img, drawX, drawY, drawW, drawH);
   }
 
+  function smoothstep(edge0, edge1, x) {
+    var t = Math.min(1, Math.max(0, (x - edge0) / (edge1 - edge0)));
+    return t * t * (3 - 2 * t);
+  }
+
   function onScroll() {
     if (!ready || ticking) return;
     ticking = true;
@@ -115,6 +122,8 @@
         currentFrame = frameIndex;
         drawFrame(frameIndex);
       }
+      // "bueno, casi nadie." aparece justo cuando el Chapulín termina de revelarse.
+      if (punchline) punchline.style.opacity = smoothstep(0.85, 1, progress);
       ticking = false;
     });
   }

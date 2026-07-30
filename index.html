@@ -97,55 +97,6 @@
     </div>
   </section>
 
-  <!-- ============ CÓMO SE JUEGA ============ -->
-  <section id="como-se-juega">
-    <div class="container">
-      <h2 class="section-title">Cómo se juega</h2>
-      <p class="section-sub">Reglas simples. Consecuencias cuestionables.</p>
-      <!-- TODO: screenshots del gameplay irán aquí, junto a las reglas, cuando pase el ASO. -->
-      <div class="rules">
-        <div class="rule"><span class="rule-num" aria-hidden="true">1</span><p>Fusiona piezas iguales para subirlas de nivel en la <strong>cadena política</strong>.</p></div>
-        <div class="rule"><span class="rule-num" aria-hidden="true">2</span><p>Cuidado con los obstáculos: el <strong>Plantón</strong> se teletransporta y el <strong>Chapulín</strong> se mueve solo.</p></div>
-        <div class="rule"><span class="rule-num" aria-hidden="true">3</span><p>Usa la <strong>Mordida</strong> para comprar la pieza que necesitas.</p></div>
-        <div class="rule"><span class="rule-num" aria-hidden="true">4</span><p>Llega hasta la <strong>Silla Presidencial</strong> y gana.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LA CADENA POLÍTICA ============ -->
-  <section class="chain" id="cadena">
-    <div class="container">
-      <h2 class="section-title">La cadena política</h2>
-      <p class="section-sub">Del lonche en el mitin a la Silla. Nadie se salta pasos… bueno, casi nadie.</p>
-      <ol class="staircase">
-        <li class="step">
-          <picture><source srcset="/assets/sprites/panfleto.webp" type="image/webp"><img src="/assets/sprites/panfleto.png" alt="Sprite del Lonche de Acarreado" width="64" height="64" loading="lazy"></picture>
-          <div class="step-text"><span class="step-num">1</span><h3>Lonche de Acarreado</h3><blockquote>"Fuiste al mitin por el lonche, no por el candidato."</blockquote></div>
-        </li>
-        <li class="step">
-          <picture><source srcset="/assets/sprites/militante.webp" type="image/webp"><img src="/assets/sprites/militante.png" alt="Sprite del Militante" width="70" height="70" loading="lazy"></picture>
-          <div class="step-text"><span class="step-num">2</span><h3>Militante</h3><blockquote>"Ya se aprendió el discurso. Todavía cree en algo."</blockquote></div>
-        </li>
-        <li class="step">
-          <picture><source srcset="/assets/sprites/operador.webp" type="image/webp"><img src="/assets/sprites/operador.png" alt="Sprite del Operador" width="76" height="76" loading="lazy"></picture>
-          <div class="step-text"><span class="step-num">3</span><h3>Operador</h3><blockquote>"El que resuelve. El que sabe a quién llamar."</blockquote></div>
-        </li>
-        <li class="step">
-          <picture><source srcset="/assets/sprites/gobernador.webp" type="image/webp"><img src="/assets/sprites/gobernador.png" alt="Sprite del Gobernador" width="82" height="82" loading="lazy"></picture>
-          <div class="step-text"><span class="step-num">4</span><h3>Gobernador</h3><blockquote>"Ya tiene camioneta con vidrios polarizados."</blockquote></div>
-        </li>
-        <li class="step">
-          <picture><source srcset="/assets/sprites/alianza-politica.webp" type="image/webp"><img src="/assets/sprites/alianza-politica.png" alt="Sprite de la Alianza" width="88" height="88" loading="lazy"></picture>
-          <div class="step-text"><span class="step-num">5</span><h3>Alianza</h3><blockquote>"Se juntó con quien sea. Ya no importa el partido."</blockquote></div>
-        </li>
-        <li class="step step--final">
-          <picture><source srcset="/assets/sprites/la-silla.webp" type="image/webp"><img src="/assets/sprites/la-silla.png" alt="Sprite de la Silla Presidencial" width="104" height="104" loading="lazy"></picture>
-          <div class="step-text"><span class="step-num">★</span><h3>Silla Presidencial</h3><blockquote>"Llegaste. Ahora a repartir cargos."</blockquote></div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
   <!-- ============ CHAPULÍN EN VIVO (scroll video) ============ -->
   <section class="chapulin-video" id="chapulin-video" aria-label="Animación del Chapulín">
     <div class="chapulin-sticky">
@@ -160,93 +111,89 @@
         </noscript>
       </div>
       <div class="chapulin-text">
-        <!-- TODO: copy temporal — reemplazar con el texto final de esta sección. -->
-        <p class="hero-eyebrow">Copy temporal</p>
-        <h2>Aquí va el título de esta sección</h2>
-        <p>Texto de relleno para maquetar el layout. Reemplázalo con la descripción final del Chapulín: cómo se mueve solo por el tablero y qué lo hace distinto a las demás piezas.</p>
+        <h2>Del lonche en el mitin a la Silla. Nadie se salta pasos… <span id="chapulinPunchline" class="chapulin-punchline">bueno, casi nadie.</span></h2>
       </div>
     </div>
   </section>
 
-  <!-- ============ EL LADO ECONÓMICO ============ -->
-  <section class="econ" id="economia">
-    <div class="container">
-      <h2 class="section-title">El lado económico</h2>
-      <p class="section-sub">Porque la grilla no se paga sola.</p>
-      <div class="pieces">
-        <div class="piece">
-          <picture><source srcset="/assets/sprites/maletin.webp" type="image/webp"><img src="/assets/sprites/maletin.png" alt="Sprite del Maletín" width="64" height="64" loading="lazy"></picture>
-          <div>
-            <h3>Maletín</h3>
-            <blockquote>“El primer moche siempre es incómodo. Los demás no.”</blockquote>
-          </div>
-        </div>
-        <div class="piece">
-          <picture><source srcset="/assets/sprites/magnate.webp" type="image/webp"><img src="/assets/sprites/magnate.png" alt="Sprite del Magnate" width="64" height="64" loading="lazy"></picture>
-          <div>
-            <h3>Magnate</h3>
-            <blockquote>“Empresario visionario: siempre sabe dónde caerá la próxima obra pública.”</blockquote>
-          </div>
-        </div>
-        <div class="piece">
-          <picture><source srcset="/assets/sprites/yate.webp" type="image/webp"><img src="/assets/sprites/yate.png" alt="Sprite del Yate" width="64" height="64" loading="lazy"></picture>
-          <div>
-            <h3>Yate</h3>
-            <blockquote>“Declaró que lo pagó con ahorros.”</blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CARTAS QUE COMPLICAN TODO ============ -->
+  <!-- ============ PIEZAS QUE CAMBIAN EL JUEGO ============ -->
   <section class="wildcards" id="cartas">
     <div class="container">
-      <h2 class="section-title">Cartas que complican todo</h2>
-      <p class="section-sub">No todo en el tablero quiere que llegues.</p>
+      <h2 class="section-title">Piezas que cambian el juego</h2>
+      <p class="section-sub">No todo en el tablero se fusiona. Unas estorban, otras te sacan del apuro.</p>
       <div class="pieces">
+        <div class="piece">
+          <picture><source srcset="/assets/sprites/planton.webp" type="image/webp"><img src="/assets/sprites/planton.png" alt="Sprite del Plantón" width="72" height="72" loading="lazy"></picture>
+          <div>
+            <h3>Plantón</h3>
+            <p>Ocupan la plaza. También tu casilla. No se fusiona con nada y se teletransporta justo cuando creías tenerlo ubicado. Solo una Carpeta lo saca.</p>
+          </div>
+        </div>
         <div class="piece">
           <picture><source srcset="/assets/sprites/chapulin.webp" type="image/webp"><img src="/assets/sprites/chapulin.png" alt="Sprite del Chapulín" width="72" height="72" loading="lazy"></picture>
           <div>
             <h3>Chapulín</h3>
-            <p>Se brinca de partido en partido según convenga. No se fusiona como los demás, se mueve solo. Junta tres y algo peor aparece.</p>
+            <p>De partido en partido, siempre con la banca llena. Se brinca de casilla solo, sin que lo muevas. Junta tres y se acomoda en una Embajada.</p>
           </div>
         </div>
         <div class="piece">
           <picture><source srcset="/assets/sprites/embajada.webp" type="image/webp"><img src="/assets/sprites/embajada.png" alt="Sprite de la Embajada" width="72" height="72" loading="lazy"></picture>
           <div>
             <h3>Embajada</h3>
-            <p>Lo que resulta cuando tres chapulines encuentran casa. Puesto cómodo, lejos del país, con vista al mar. Nadie pregunta por qué.</p>
+            <p>Tres chapulines con destino en el extranjero. Puesto cómodo, lejos del país — y de paso te deja una Carpeta.</p>
           </div>
         </div>
         <div class="piece">
-          <picture><source srcset="/assets/sprites/planton.webp" type="image/webp"><img src="/assets/sprites/planton.png" alt="Sprite del Plantón" width="72" height="72" loading="lazy"></picture>
+          <picture><source srcset="/assets/sprites/organismo-internacional.webp" type="image/webp"><img src="/assets/sprites/organismo-internacional.png" alt="Sprite del Organismo Internacional" width="72" height="72" loading="lazy"></picture>
           <div>
-            <h3>Plantón</h3>
-            <p>No se fusiona y no negocia. Se teletransporta de casilla en casilla justo cuando creías tenerlo controlado — nunca se queda quieto el tiempo suficiente.</p>
-          </div>
-        </div>
-        <div class="piece">
-          <picture><source srcset="/assets/sprites/mordida.webp" type="image/webp"><img src="/assets/sprites/mordida.png" alt="Sprite de la Mordida" width="72" height="72" loading="lazy"></picture>
-          <div>
-            <h3>Mordida</h3>
-            <p>Reemplaza tu próxima pieza por la que tú elijas. Todo tiene un precio, hasta el orden del tablero.</p>
-          </div>
-        </div>
-        <div class="piece">
-          <picture><source srcset="/assets/sprites/carpeta-de-investigacion.webp" type="image/webp"><img src="/assets/sprites/carpeta-de-investigacion.png" alt="Sprite de la Carpeta de Investigación" width="72" height="72" loading="lazy"></picture>
-          <div>
-            <h3>Carpeta de Investigación</h3>
-            <p>Se abre cuando conviene y se cierra cuando conviene más. Úsala para sacar del tablero a quien estorbe — nadie pregunta con qué fundamento.</p>
+            <h3>Organismo Internacional</h3>
+            <p>Tres embajadas y ya es un organismo con siglas. Muchas naciones, una declaración sin consecuencias… y tres Carpetas para ti.</p>
           </div>
         </div>
         <div class="piece">
           <picture><source srcset="/assets/sprites/filtracion.webp" type="image/webp"><img src="/assets/sprites/filtracion.png" alt="Sprite de la Filtración" width="72" height="72" loading="lazy"></picture>
           <div>
             <h3>Filtración</h3>
-            <p>El audio que nadie sabe quién grabó, publicado justo a tiempo. Elige una pieza y la manda un escalón para abajo — la exhibe.</p>
+            <p>Alguien filtró el expediente y ahora todos se lavan las manos. Elige una pieza del tablero y bájala un escalón.</p>
           </div>
         </div>
+        <div class="piece">
+          <picture><source srcset="/assets/sprites/carpeta-de-investigacion.webp" type="image/webp"><img src="/assets/sprites/carpeta-de-investigacion.png" alt="Sprite de la Carpeta de Investigación" width="72" height="72" loading="lazy"></picture>
+          <div>
+            <h3>Carpeta de investigación</h3>
+            <p>Se abre cuando conviene. Borra del tablero la pieza que quieras — hasta un Plantón. Te la ganas con cada Embajada o la compras en la Mordida.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- La Mordida no es una pieza: es la tienda donde se gastan los pesos. -->
+      <div class="store">
+        <picture><source srcset="/assets/sprites/mordida.webp" type="image/webp"><img src="/assets/sprites/mordida.png" alt="Sprite de la Mordida" width="88" height="88" loading="lazy"></picture>
+        <div>
+          <h3>La Mordida</h3>
+          <p>La tienda, pues. Tus Magnates, Yates y Paraísos Fiscales sueltan pesos cada cierto número de jugadas — y en la Mordida los cambias por la pieza que te falta o por una Carpeta. Todo tiene precio; unos más alto que otros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="final-cta">
+    <div class="container">
+      <picture><source srcset="/assets/sprites/la-silla.webp" type="image/webp"><img src="/assets/sprites/la-silla.png" alt="Sprite de la Silla Presidencial" width="88" height="88" loading="lazy" class="final-cta-silla"></picture>
+      <p class="hero-eyebrow">La meta: la Silla Presidencial</p>
+      <h2 class="section-title">¿Listo para fusionarte hasta la Silla?</h2>
+      <div class="hero-cta">
+        <!-- CTA App Store: descomentar y poner el link real cuando la app esté publicada.
+        <a class="cta-placeholder" href="https://apps.apple.com/app/idXXXXXXXXX" style="cursor:pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08ZM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
+          <span>Descárgalo en el <strong>App Store</strong></span>
+        </a>
+        -->
+        <span class="cta-placeholder">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08ZM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
+          <span>Próximamente en el App Store<small>Gratis para iPhone</small></span>
+        </span>
       </div>
     </div>
   </section>
