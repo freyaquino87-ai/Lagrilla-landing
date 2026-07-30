@@ -149,7 +149,7 @@
     // La tarjeta aparece justo cuando el personaje termina de revelarse.
     var opacity = smoothstep(0.62, 0.8, progress);
     caption.style.opacity = opacity;
-    caption.style.transform = 'translateY(' + (10 - opacity * 10) + 'px)';
+    caption.style.transform = 'translate(-50%, ' + (10 - opacity * 10) + 'px)';
   }
 
   function onScroll() {

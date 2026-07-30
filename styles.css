@@ -43,10 +43,7 @@ h1, h2, h3 { text-wrap: balance; }
 .hero {
   position: relative;
   padding: 64px 20px 0;
-  background:
-    radial-gradient(ellipse 70% 55% at 78% -10%, var(--accent-soft), transparent),
-    var(--bg);
-  border-bottom: 1px solid var(--line);
+  background: var(--bg);
   overflow: hidden;
 }
 .hero-text { position: relative; z-index: 2; max-width: 560px; margin: 0 auto; text-align: center; }
@@ -65,10 +62,9 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .hero-shot {
   display: block;
-  max-width: 210px;
+  max-width: 158px;
   margin: 8px auto 0;
   transform: rotate(-4deg);
-  filter: drop-shadow(0 22px 38px rgba(38, 34, 26, .26));
 }
 .hero-shot-clip {
   display: block;
@@ -76,7 +72,8 @@ h1, h2, h3 { text-wrap: balance; }
   overflow: hidden;
   transform: translateZ(0);
 }
-.hero-shot img {
+.hero-shot img,
+.hero-shot video {
   width: 100%;
   height: auto;
   display: block;
@@ -98,8 +95,6 @@ h1, h2, h3 { text-wrap: balance; }
   letter-spacing: .12em;
   text-transform: uppercase;
   color: #1F5A40;
-  border: 2px solid #1F5A40;
-  border-radius: 8px;
   padding: 4px 10px;
   margin: 14px auto 0;
   width: fit-content;
@@ -147,6 +142,7 @@ h1, h2, h3 { text-wrap: balance; }
   position: sticky;
   top: 0;
   height: 100vh;
+  height: 100dvh; /* alto real visible en mobile (evita que la barra del navegador tape la tarjeta) */
   width: 100%;
   overflow: hidden;
   background: #F0E9CE; /* crema del video antes del flash de la explosión; JS lo actualiza según el scroll */
@@ -413,5 +409,5 @@ footer a { color: var(--accent); }
   .hero-eyebrow { margin-left: 0; }
   .hero-stamp { margin-left: 0; }
   .hero-cta { justify-content: flex-start; }
-  .hero-shot { max-width: 300px; margin: 0; justify-self: end; transform: rotate(-6deg) translateY(-12px); }
+  .hero-shot { max-width: 225px; margin: 0; justify-self: end; transform: rotate(-6deg) translateY(-12px); }
 }

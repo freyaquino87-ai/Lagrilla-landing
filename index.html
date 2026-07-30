@@ -51,13 +51,30 @@
     </div>
     <div class="hero-shot">
       <div class="hero-shot-clip">
-        <picture>
-          <source srcset="/assets/hero-mockup.webp" type="image/webp">
-          <img src="/assets/hero-mockup.png" alt="Captura del tablero de La Grilla en pleno merge-puzzle" width="350" height="684" loading="eager">
-        </picture>
+        <video
+          id="heroGameplay"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="/assets/hero-gameplay-poster.webp"
+          width="640"
+          height="1384"
+          aria-label="Gameplay de La Grilla: fusionando piezas en el tablero"
+        >
+          <source src="/assets/hero-gameplay.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </header>
+  <script>
+    // Usuarios con "reducir movimiento" ven el poster fijo, sin autoplay.
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var heroVideo = document.getElementById('heroGameplay');
+      if (heroVideo) heroVideo.removeAttribute('autoplay');
+    }
+  </script>
 
   <!-- ============ FUSIÓN EN VIVO (scroll video) ============ -->
   <section class="fusion-video" id="fusion-video" aria-label="Video de una fusión en La Grilla">
