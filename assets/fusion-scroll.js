@@ -12,15 +12,21 @@
   var caption = document.getElementById('fusionCaption');
   var videoFallback = document.getElementById('fusionVideoFallback');
 
-  var FRAME_COUNT = 105;
-  var FRAME_PATH = '/assets/scroll-frames/frame_';
+  // En mobile se sirve un set de frames más chico y liviano (menor
+  // resolución y fps) para no tardar tanto en cargar en redes lentas.
+  var isMobile = window.innerWidth <= 768;
+  var FRAME_COUNT = isMobile ? 70 : 105;
+  var FRAME_PATH = isMobile
+    ? '/assets/scroll-frames-mobile/frame_'
+    : '/assets/scroll-frames/frame_';
+  var FRAME_EXT = '.webp';
 
-  // El video trae un flash de brillo justo en la explosión (~frame 59/105):
-  // antes es más oscuro, después más claro. Igualamos el fondo de la
-  // sección a cada tramo para que no se note la costura.
+  // El video trae un flash de brillo justo en la explosión (~56% del
+  // progreso): antes es más oscuro, después más claro. Igualamos el fondo
+  // de la sección a cada tramo para que no se note la costura.
   var BG_BEFORE_RGB = [240, 233, 206];
   var BG_AFTER_RGB = [249, 238, 210];
-  var BG_SWITCH_FRAME = 59;
+  var BG_SWITCH_FRAME = Math.round((59 / 105) * FRAME_COUNT);
 
   function bgForFrame(index) {
     return index < BG_SWITCH_FRAME ? BG_BEFORE_RGB : BG_AFTER_RGB;
@@ -60,7 +66,7 @@
         img.decoding = 'async';
         img.onload = onFrameLoaded;
         img.onerror = onFrameLoaded;
-        img.src = FRAME_PATH + pad(index) + '.jpg';
+        img.src = FRAME_PATH + pad(index) + FRAME_EXT;
         frames[index - 1] = img;
       })(i);
     }
