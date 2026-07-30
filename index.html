@@ -146,6 +146,28 @@
     </div>
   </section>
 
+  <!-- ============ CHAPULÍN EN VIVO (scroll video) ============ -->
+  <section class="chapulin-video" id="chapulin-video" aria-label="Animación del Chapulín">
+    <div class="chapulin-sticky">
+      <div class="chapulin-media">
+        <canvas id="chapulinCanvas" aria-hidden="true"></canvas>
+        <img id="chapulinStaticFallback" class="chapulin-static-fallback" src="/assets/chapulin-poster.webp" alt="" aria-hidden="true">
+        <div class="chapulin-loader" id="chapulinLoader" aria-hidden="true">
+          <div class="chapulin-loader-bar"><span id="chapulinLoaderFill"></span></div>
+        </div>
+        <noscript>
+          <img src="/assets/chapulin-poster.webp" alt="El Chapulín asomándose, la pieza que se mueve sola en La Grilla" class="chapulin-noscript">
+        </noscript>
+      </div>
+      <div class="chapulin-text">
+        <!-- TODO: copy temporal — reemplazar con el texto final de esta sección. -->
+        <p class="hero-eyebrow">Copy temporal</p>
+        <h2>Aquí va el título de esta sección</h2>
+        <p>Texto de relleno para maquetar el layout. Reemplázalo con la descripción final del Chapulín: cómo se mueve solo por el tablero y qué lo hace distinto a las demás piezas.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ EL LADO ECONÓMICO ============ -->
   <section class="econ" id="economia">
     <div class="container">
@@ -236,5 +258,6 @@
   </footer>
 
   <script src="/assets/fusion-scroll.js" defer></script>
+  <script src="/assets/chapulin-scroll.js" defer></script>
 </body>
 </html>

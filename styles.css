@@ -231,6 +231,80 @@ h1, h2, h3 { text-wrap: balance; }
   .fusion-caption { opacity: 1 !important; transform: translate(-50%, 0) !important; }
 }
 
+/* ---------- Chapulín en vivo (scroll video, costado izquierdo) ---------- */
+.chapulin-video { position: relative; height: 220vh; padding: 0; }
+.chapulin-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+}
+.chapulin-media {
+  position: relative;
+  width: 45%;
+  height: 100%;
+  flex-shrink: 0;
+}
+#chapulinCanvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.chapulin-static-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.chapulin-noscript { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.chapulin-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: opacity .4s ease;
+  z-index: 3;
+}
+.chapulin-loader-bar {
+  width: 120px;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--line);
+  overflow: hidden;
+}
+.chapulin-loader-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width .2s ease;
+}
+.chapulin-text {
+  flex: 1;
+  padding: 0 6vw 0 4vw;
+}
+.chapulin-text h2 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin: 12px 0 10px;
+}
+.chapulin-text p { color: var(--muted-dark); font-size: 1rem; max-width: 480px; }
+
+@media (max-width: 1024px) { .chapulin-video { height: 200vh; } }
+@media (max-width: 768px) {
+  .chapulin-video { height: 190vh; }
+  .chapulin-sticky { flex-direction: column; justify-content: center; }
+  .chapulin-media { width: 100%; height: 52%; }
+  .chapulin-text { padding: 16px 24px 0; text-align: center; }
+  .chapulin-text p { margin: 0 auto; }
+}
+
 /* ---------- Secciones ---------- */
 section { padding: 64px 0; }
 .section-title {
