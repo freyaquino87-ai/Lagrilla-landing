@@ -59,6 +59,27 @@
     </div>
   </header>
 
+  <!-- ============ FUSIÓN EN VIVO (scroll video) ============ -->
+  <section class="fusion-video" id="fusion-video" aria-label="Video de una fusión en La Grilla">
+    <div class="fusion-sticky">
+      <canvas id="fusionCanvas" aria-hidden="true"></canvas>
+      <video id="fusionVideoFallback" class="fusion-video-fallback" muted loop playsinline preload="none" poster="/assets/scroll-frames/frame_0001.jpg" aria-hidden="true">
+        <source src="/assets/fusion-loop.mp4" type="video/mp4">
+      </video>
+      <div class="fusion-loader" id="fusionLoader" aria-hidden="true">
+        <div class="fusion-loader-bar"><span id="fusionLoaderFill"></span></div>
+      </div>
+      <div class="fusion-caption" id="fusionCaption">
+        <p class="hero-eyebrow">Así se ve una fusión</p>
+        <h2>Tres lonches, un Acarreado</h2>
+        <p>Fusiona piezas iguales para subirlas de nivel en la cadena política — desde el Lonche de Acarreado hasta la Silla Presidencial.</p>
+      </div>
+      <noscript>
+        <img src="/assets/scroll-frames/frame_0105.jpg" alt="El personaje Acarreado, resultado de fusionar tres Lonches de Acarreado en La Grilla" class="fusion-noscript">
+      </noscript>
+    </div>
+  </section>
+
   <!-- ============ CÓMO SE JUEGA ============ -->
   <section id="como-se-juega">
     <div class="container">
@@ -197,5 +218,6 @@
     <p>© 2026 La Grilla. Cualquier parecido con la realidad es pura coincidencia electoral.</p>
   </footer>
 
+  <script src="/assets/fusion-scroll.js" defer></script>
 </body>
 </html>
